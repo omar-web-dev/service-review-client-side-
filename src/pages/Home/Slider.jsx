@@ -38,16 +38,40 @@ const Slider = () => {
                     modules={[Pagination]}
                     className="mySwiper"
                 >
+{/* https://i.ibb.co/wR5bGR9/1.png
+https://i.ibb.co/sg67WjG/2.png
+https://i.ibb.co/V2nLHZn/3.png
+https://i.ibb.co/hdvGHk2/4.png
+https://i.ibb.co/80dCmnv/5.png
+https://i.ibb.co/yVFTbQw/6.png */}
                     <div className='px-5 md:px-0'>
-                        <SwiperSlide>Slide 1</SwiperSlide>
-                        <SwiperSlide>Slide 2</SwiperSlide>
-                        <SwiperSlide>Slide 3</SwiperSlide>
-                        <SwiperSlide>Slide 4</SwiperSlide>
-                        <SwiperSlide>Slide 5</SwiperSlide>
-                        <SwiperSlide>Slide 6</SwiperSlide>
-                        <SwiperSlide>Slide 7</SwiperSlide>
-                        <SwiperSlide>Slide 8</SwiperSlide>
-                        <SwiperSlide>Slide 9</SwiperSlide>
+                        <SwiperSlide>
+                            <img src="https://esolz.net/wp-content/uploads/2021/04/PHP-Development-Technology.png" alt="img" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src="https://esolz.net/wp-content/uploads/2021/04/PHP-Development-Technology.png" alt="img" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src="https://esolz.net/wp-content/uploads/2021/04/PHP-Development-Technology.png" alt="img" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src="https://esolz.net/wp-content/uploads/2021/04/PHP-Development-Technology.png" alt="img" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src="https://esolz.net/wp-content/uploads/2021/04/PHP-Development-Technology.png" alt="img" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src="https://esolz.net/wp-content/uploads/2021/04/PHP-Development-Technology.png" alt="img" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src="https://esolz.net/wp-content/uploads/2021/04/PHP-Development-Technology.png" alt="img" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src="https://esolz.net/wp-content/uploads/2021/04/PHP-Development-Technology.png" alt="img" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src="https://esolz.net/wp-content/uploads/2021/04/PHP-Development-Technology.png" alt="img" />
+                        </SwiperSlide>
                     </div>
                 </Swiper>
             </div>
