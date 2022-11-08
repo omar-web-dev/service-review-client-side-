@@ -40,7 +40,7 @@ const Registration = () => {
         <div className='max-w-[1440px] mx-auto mt-28'>
             <div className="min-h-screen md:flex md:justify-center">
                 <form onSubmit={handelUserRegistration} className='w-full px-4 lg:max-md:w-1/2'>
-                    <div className='border lg:p-5 max-w-[611px]'>
+                    <div className='mx-auto border lg:p-5 max-w-[611px]'>
                         <div className="text-center lg:text-left">
                             {error &&
                                 <p className='text-red-500'>{error}</p>

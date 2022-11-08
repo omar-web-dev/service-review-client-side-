@@ -66,8 +66,8 @@ const Login = () => {
             <div className="h-full  w-full py-16 px-4">
 
                 <div className="flex flex-col items-center justify-center">
-                    <form onSubmit={handelSingIn} className="lg:w-1/3  md:w-1/2">
-                        <div className="bg-white shadow rounded  w-full p-8 mt-16">
+                    <form onSubmit={handelSingIn} className="lg:w-1/3 w-full md:w-1/2">
+                        <div className="bg-white shadow rounded  w-full p-2 md:pt-8 mt-4 lg:mt-16">
                             <div className='border p-7'>
                                 <p className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800 pb-3">Login to</p>
                                 {error &&
