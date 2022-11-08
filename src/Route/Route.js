@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Details from "../pages/Home/Details";
+import Blog from "../pages/Blog";
 
 
 export const router = createBrowserRouter([
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
             {
                 path: 'details',
                 element : <Details/>
+            },
+            {
+                path: 'blog',
+                element : <Blog/>
             },
         ]
     }
