@@ -48,6 +48,11 @@ const Services = () => {
                     <p className=" text-gray-50">Mauris et lorem at elit tristique dignissim et ullamcorper elit. In sed feugiat mi. Etiam ut lacinia dui.</p>
                 </div>
             </div>
+            <div className='mt-10 flex justify-center  '>
+                <Link>
+                <button className='btn w-[300px] hover:bg-gray-100 text-white bg-orange-500 hover:text-orange-500'>see all</button>
+                </Link>
+            </div>
         </div>
     );
 };
