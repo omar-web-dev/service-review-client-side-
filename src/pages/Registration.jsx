@@ -38,14 +38,14 @@ const Registration = () => {
     console.log(error)
     return (
         <div className='max-w-[1440px] mx-auto mt-28'>
-            <div className="min-h-screen flex justify-center">
-                <form onSubmit={handelUserRegistration} className=' md:w-1/2'>
-                    <div className='border p-5 w-[611px]'>
+            <div className="min-h-screen md:flex md:justify-center">
+                <form onSubmit={handelUserRegistration} className='w-full px-4 lg:max-md:w-1/2'>
+                    <div className='border lg:p-5 max-w-[611px]'>
                         <div className="text-center lg:text-left">
                             {error &&
                                 <p className='text-red-500'>{error}</p>
                             }
-                            <h1 className="text-4xl text-center font-semi-bold ">Resignation</h1>
+                            <h1 className="pt-5 text-4xl text-center font-semi-bold ">Resignation</h1>
                         </div>
                         <div className="card flex-shrink-0 ">
                             <div className="card-body">
