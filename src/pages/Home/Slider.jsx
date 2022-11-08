@@ -6,7 +6,7 @@ import { Pagination } from "swiper";
 
 const Slider = () => {
     return (
-        <div className='bg-gray-900 pt-34 px-3 md:px-0 text-center'>
+        <div className='bg-[#1818ca] pt-34 px-3 md:px-0 text-center'>
             <div className='text-gray-50'>
                 <h2 className='text-5xl pt-10'>
                     Popular Courses
