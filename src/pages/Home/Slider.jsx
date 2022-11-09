@@ -14,7 +14,7 @@ const Slider = () => {
                 <h4 className='text-lg py-5 '>During the whole month of November,<br /> essiun school courses can be done at a more economical price!</h4>
                 <button className=' border border-red-400 rounded-md px-5 py-2 mb-5 inline-block'>Contact for any information regarding the course</button>
             </div>
-            <div className='slider'>
+            <div className='slider pb-10'>
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={10}

@@ -1,0 +1,98 @@
+[
+    {
+        "price": "2990",
+        "ratting": "4.9",
+        "image": "",
+        "title": "GRAPHIC DESIGN",
+        "description": [
+            "In Adobe Illustrator, we will master the pen tool by hand tracing simple and complex shapes. We will explore the power of the shape builder tool and In the end of this section, we will design a complete logo design. There is an entirely new introduction and tools section that has been added where we work through a 7 page vector tracing worksheet and in the end create a complex vector illustration using our newly learned illustrator vector tools. Lastly, we will put together an event flyer to practice our layout skills, and even work through the branding process and create a logo, business card and letterhead for a business.",
+            "We will will create a magazine layout in InDesign and learn the master pages tool to drastically speed up your design workflow when working with multiple paged layouts. ",
+            "We will talk about branding basics, what makes a good logo? How do you extend your logo or brand to other marketing materials? ",
+            "I designed this extensive course to be gentle enough for new comers to design but detailed enough for everyone to get a TON out of this course."
+        ],
+        "class": "320"
+    },
+    {
+        "name": "",
+        "price": "3990",
+        "ratting": "4.7",
+        "title": "Digital Marketing",
+        "image": "",
+        "description": [
+            "I have 10+ years experience in the digital marketing industry, ranging from small businesses in upstate NY, to major advertisers, out of NYC based ad agencies, and on the mobile and tech side of the business, splitting my time between New York and Silicon Valley. The advertisers I work with are both national and international brands ranging from entertainment, fashion, liquor, government agencies and more.",
+            "Are you ready to learn about the world of Digital Marketing & Digital Advertising? Are you ready to learn about the hundreds of companies outside of Google and Facebook which control ads you see on your computer, phones, and tablets? Are you ready to understand the terms, pricing models, ad units, and everything else you need to succeed in the digital advertising space? Then you’re at the right place!",
+            "To successfully create and manage digital advertising campaigns on that scale you need to understand not just the basic advertising principles you learn in school, but fully understand the ever changing digital advertising ecosystem.",
+            "This course will teach you everything you need to know to get a job in advertising and marketing, run a successful campaign, grow your current business or find new ways to increase your personal value at your current job.",
+            "As always there is a 30 Day Money Back Guarantee, so you have nothing to lose and so much to gain!"
+        ],
+        "class": "290"
+    },
+    {
+        "price": "4990",
+        "ratting": "4.8",
+        "title": "Laravel 8 PHP Framework A - Z Build Professional Ecommerce",
+        "image": "",
+        "description": [
+            "Laravel is an open-source PHP framework, which is robust and easy to understand. It follows a model-view-controller design pattern. Laravel reuses the existing components of different frameworks which helps in creating a web application. The web application thus designed is more structured and pragmatic.",
+            "As i told you this complete project course which beings you to Beginner to Advance level by creating complete most advanced Ecommerce Project. You will able to understand how to complete one project, how to handle project bugs, Core structures of MVC. This complete project will help you to get a job with this new skill. You will be able to start work for your client. Add this project in your profolio and university assignment And most importantly you will get my support with in 24 hours. If you have any issues just let me know about this i will be in your touch."
+        ],
+        "class": "230"
+    },
+    {
+        "price": "2990",
+        "ratting": "",
+        "title": "Tailwind CSS From Scratch | Learn By Building Projects",
+        "image": "",
+        "description": [
+            "This is a fun project-based course to learn how to create awesome layouts using the Tailwind CSS framework and get comfortable using utility classes over something like Bootstrap, which uses component-based classes. Let's take a look at the outline for this course...",
+            "I don't want to jump right into the projects, though you certainly could if you want. So the first two sections, we will be working in a coding sandbox. In every new video in these sections, we will have a new file to experiment with and learn all about a certain aspect of Tailwind. For example, we will have pages/videos for colors, typography, spacing, flex classes, and much more. This allows us to essential touch on all parts of Tailwind in a specific order, rather than just jumping right into projects.",
+            "Next, we will take what we learn in the sandbox environment and use it to create some small projects. These are things that will take 10 - 20 minutes to create and we will do it all in one video per project. The mini-projects include"
+        ],
+        "class": "420"
+    },
+    {
+        "price": "4990",
+        "ratting": "4.9",
+        "title": "The Complete React Native + Hooks Course",
+        "image": "",
+        "description": 
+        [
+            "If you're tired of spinning your wheels learning Swift or Android, this is the course for you.",
+            "Authentication? You will learn it.  Hooks? Included.  Navigation? Of course!",
+            "This course will get you up and running with React Native quickly, and teach you the core knowledge you need to deeply understand and build React components for mobile devices.",
+
+            "Both OSX and Windows supported - develop iOS or Android!",
+            
+            "This course includes content on both v0.62.2 and the legacy v0.30.x, which is widely used in industry.",
+            
+            "We'll start by mastering the fundamentals of React, including JSX, 'props', 'state', and event handling. Source code is provided for each lecture, so you will always stay up-to-date with the course pacing.  Special attention has been paid to creating reusable components that you'll be able to make use of on your own fantastic projects.",
+            
+            "React Native is an excellent solution for developing apps on mobile in a fraction of the time it takes to make an equivalent iOS or Swift app.  You'll love seeing your changes instantly appear on your own device, rather than waiting for Swift/Java code to recompile!  This quick feedback loop, along with excellent cross platform support, is what has catapulted React Native to the top must-have skill for Javascript engineers.",
+            
+            "If you are new to React, or if you've been working to learn it but sometimes feel like you still don't quite 'get it', this is the React course for you! To learn React you have to understand it."
+        ],
+        "class": "230"
+    },
+    {
+        "price": "130",
+        "ratting": "5",
+        "title": "Todo List App with React Native Expo - Mobile Development",
+        "image": "",
+        "description": [
+            "Hello Everyone, in this course we are going to build a fully functional Todo List App using react native with Expo CLI, Redux, Redux persist and Asyncstorage as the main technologies.",
+            "Mobile apps are one of the best ways to engage with users - no wonder everyone wants to build one! Wouldn't it be great if you could use your web development knowledge, combined with your React knowledge, to build mobile apps with that?",
+
+            "That's exactly what React Native allows you to do!",
+
+            "No need to learn Java, Android, Swift, ObjectiveC or anything of that - React and JavaScript is all you need to create awesome native mobile apps that work on both Android and iOS. That's probably the reason why Instagram, AirBnB, Skype and many other global companies are using it to build their mobile apps!",
+            
+            "Also in this project we are going to have a clean architecture in our project, you will learn how to organize your project structure and maintain good code readability. At the middle section of this course we are going to implement all the screens we need to create in this mobile application and we will install all the dependencies and the UI libraries which we need in this project.",
+            
+            "At the end of this course we will implement delete function and delete all notes functions to delete notes from redux store and the asyncstorage as well. So you will understand how to manage redux with asyncstorage. Also I need to mention that this course is everyone in with any level of knowledge in react native mobile development. But if you have any previous React or React native experience then it will help you to understand all the concepts behind this application very easily.",
+            
+            "If you wish to continue improving your skills and building your knowledge furthermore then this course is definitely the right option for you."
+
+        ],
+        "class": "12"
+    }
+]
