@@ -4,7 +4,6 @@ import ServiceCard from './ServiceCard';
 
 const AllService = () => {
     const services = useLoaderData()
-    console.log(services)
     return (
         <div className='max-w-[1400px] mx-auto p-5'>
             <div className=' text-center max-w-[992px] mx-auto'>

@@ -6,14 +6,13 @@ import Services from './Services/Services';
 import Slider from './Slider';
 
 const Home = () => {
-  const service = useLoaderData()
-  // console.log(data)
+  const services = useLoaderData()
     return (
         <div>
           <Slider/>
           <Branding/>
           <AboutService/>
-          <Services services={service}/>
+          <Services services={services}/>
         </div>
     );
 };

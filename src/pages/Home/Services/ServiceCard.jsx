@@ -3,8 +3,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
-    console.log(service)
-    const { title, ratting, price, description, image } = service
+    const { _id, title, ratting, price, description, image } = service
     return (
         <div className="p-6 rounded-md bg-gray-100 shadow-lg">
             <PhotoProvider>
@@ -22,11 +21,13 @@ const ServiceCard = ({ service }) => {
                 </div>
             </div>
             <p className=" text-gray-800">
-                {description[0].slice(0,100)}
+                {description[0].slice(0, 100)}
             </p>
-            <button className='bg-orange-100 mt-1 text-orange-500 btn w-full '>
-                <Link to='../../details'>Details</Link>
-            </button>
+            <Link to={`../service/${_id}`}>
+                <button className='bg-orange-100 mt-1 text-orange-500 btn w-full '>
+                    Details
+                </button>
+            </Link>
         </div>
     );
 };
