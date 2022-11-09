@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaFreeCodeCamp } from 'react-icons/fa';
 import { TbAccessPoint, TbClock } from "react-icons/tb";
 import ReactModal from 'react-modal';
 // import ReactModal from 'react-modal';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
+import DisplayReviews from '../Review/DisplayReviews';
 
 
 const customStyles = {
@@ -19,24 +21,63 @@ const customStyles = {
 
 
 const Details = () => {
+    const { user } = useContext(AuthContext)
     const detailsService = useLoaderData()
-    const { image, tClass, description } = detailsService
+    // const {email, photoURL, uid } = user
+    const { _id, image, tClass, description } = detailsService
+    const name = user?.displayName
+    const email = user?.email
+    const img = user?.photoURL
+
+
+    const [reviews, setReviews] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews?service_ID=${_id}`)
+        .then(res => res.json())
+        .then(data => setReviews(data))
+    },[])
+
+
+
+
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
+
+    const sendReview = (e) => {
+        e.preventDefault()
+        const massage = e.target.massage.value
+        console.log(massage)
+
+        const order = {
+            name,
+            email,
+            img,
+            service: _id,
+            massage
+        }
+
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data?.acknowledged) {
+                    alert('Order complied');
+                }
+            })
+            .catch(er => console.log(er))
+    }
+
+
 
     function openModal() {
         setIsOpen(true);
     }
 
-    const sendReview = (e) => {
-        e.preventDefault()
-        const massage = e.target.massage.value
-        // const review = e.target.review.value
-        const review = e.target.btn1.value
-        console.log(massage, review)
-        console.log('successfully send your review')
-        // setIsOpen(false);
-    }
+
 
     function afterOpenModal() {
         // references are now sync'd and can be accessed.
@@ -46,11 +87,10 @@ const Details = () => {
     function closeModal() {
         setIsOpen(false);
     }
-    console.log(detailsService)
     return (
         <>
             <div >
-                
+
                 <ReactModal
                     isOpen={modalIsOpen}
                     onAfterOpen={afterOpenModal}
@@ -58,22 +98,6 @@ const Details = () => {
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
-                    {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-
-                    <div>I am a modal</div>
-                    <form>
-                        <input type='text-area' />
-                        <button>tab navigation</button>
-                        <button>stays</button>
-                        <button>inside</button>
-                        <label className="block">
-                            <span className="mb-1">Message</span>
-                            <textarea rows="3" className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:outline-none dark:bg-gray-100"></textarea>
-                        </label>
-                        <button>the modal</button>
-                    </form>
-                    <button onClick={closeModal} className='btn btn-error'>close</button> */}
-
                     <div className="flex flex-col max-w-xl p-8 shadow-sm rounded-xl lg:p-12 dark:bg-gray-100 dark:text-gray-800">
                         <form onSubmit={sendReview} className="flex flex-col items-center w-full">
                             <h2 className="text-3xl font-semibold text-center">Your opinion matters!</h2>
@@ -133,7 +157,6 @@ const Details = () => {
                             <p className="pt-2 text-sm dark:text-gray-400"><span className='text-orange-500'>861</span> global ratings</p>
                         </div>
                         <p className='py-1'>Last updated 11/2022</p>
-                        {/* <button onClick={openModal}>Open Modal</button> */}
                         <button onClick={openModal} className='btn mb-2'>add your review</button>
                     </div>
                 </div>
@@ -240,29 +263,7 @@ const Details = () => {
                         </div>
                     </div>
                     <div className='w-2/4  grid-cols-1 gap-5 '>
-                        <div className="container flex flex-col w-full my-5  max-w-lg p-6 mx-auto divide-y rounded-md bg-slate-50 ">
-                            <div className="flex justify-between p-4">
-                                <div className="flex space-x-4">
-                                    <div>
-                                        <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold">Leroy Jenkins</h4>
-                                        <span className="text-xs text-gray-500">2 days ago</span>
-                                    </div>
-                                </div>
-                                <div className="flex items-center space-x-2 text-orange-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
-                                        <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                    </svg>
-                                    <span className="text-xl font-bold">4.5</span>
-                                </div>
-                            </div>
-                            <div className="p-4 space-y-2 text-sm text-gray-600">
-                                <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
-                                <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
-                            </div>
-                        </div>
+                        {reviews.map(rw => <DisplayReviews rw={rw} key={rw._id} />)}
                     </div>
                 </div>
             </div>
