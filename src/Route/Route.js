@@ -20,22 +20,22 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                loader : () => fetch(`http://localhost:5000/services`),
+                loader : () => fetch(`https://essium.vercel.app/services`),
                 element : <Home/>
             },
             {
                 path: 'home',
-                loader : () => fetch(`http://localhost:5000/services`),
+                loader : () => fetch(`https://essium.vercel.app/services`),
                 element : <Home/>
             },
             {
                 path: 'services',
-                loader : () => fetch(`http://localhost:5000/all-services`),
+                loader : () => fetch(`https://essium.vercel.app/all-services`),
                 element : <AllServices/>
             },
             {
                 path: 'my-review',
-                // loader : () => fetch(`http://localhost:5000/all-services`),
+                // loader : () => fetch(`https://essium.vercel.app/all-services`),
                 element : <PrivetRoute><MyReview/></PrivetRoute>
             },
             {
@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
             {
                 path: 'service/:_id',
                 // http://localhost:3000/details/636b1fe0ba91a2efff9d7eb4
-                loader : ({params}) => fetch(`http://localhost:5000/service/${params._id}`),
+                loader : ({params}) => fetch(`https://essium.vercel.app/service/${params._id}`),
                 element : <Details/>
             },
             {

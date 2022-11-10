@@ -39,7 +39,7 @@ const AddReview = ({ id, serviceName }) => {
             service_ID: id
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://essium.vercel.app/reviews', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(reviewSet)

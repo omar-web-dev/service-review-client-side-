@@ -20,7 +20,7 @@ const Details = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?service_ID=${_id}`)
+        fetch(`https://essium.vercel.app/reviews?service_ID=${_id}`)
         .then(res => res.json())
         .then(data => setReviews(data))
     },[user?.email])

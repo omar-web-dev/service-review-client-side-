@@ -8,7 +8,7 @@ const MyReview = () => {
     const userEmail = user?.email
     
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews-email?email=${userEmail}`)
+        fetch(`https://essium.vercel.app/reviews-email?email=${userEmail}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [user?.email])

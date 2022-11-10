@@ -32,36 +32,19 @@ const MyReviewsCard = ({ rw, reviews, setReviews }) => {
     console.log('no a data')
     }
 
-    // const handelEdit = id => {
-    //     fetch(`http://localhost:5000/reviews/${id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ review })
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //             if(data.modifiedCount > 0){
-    //             }
-    //         })
-    // }
-
 
     const notify = () => toast("successfully deleted!");
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const handelDelete = (id) => {
         const confirm = window.confirm('Are you sure delete this Review')
         if (confirm) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://essium.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
                 .then(data => {
                     if (data?.deletedCount > 0) {
                         notify()
-                        // console.log(data)
                         const reaming = reviews.filter(rw => rw._id !== id)
                         setReviews(reaming)
                     }
@@ -70,11 +53,10 @@ const MyReviewsCard = ({ rw, reviews, setReviews }) => {
     }
 
     const sendReview = (e) => {
-
         e.preventDefault()
         const massage = e.target.massage.value
         
-        fetch(`http://localhost:5000/reviews/${massageId}`, {
+        fetch(`https://essium.vercel.app/reviews/${massageId}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
