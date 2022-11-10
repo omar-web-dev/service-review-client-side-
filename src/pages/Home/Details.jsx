@@ -44,7 +44,7 @@ const Details = () => {
                         <p className='py-1'>Last updated 11/2022</p>
 
                         {/*  */}
-                        <AddReview id={_id} serviceName={title} />
+                        <AddReview id={_id} reviews={reviews} serviceName={title} />
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@ const Details = () => {
                             <img src={image} alt="" className="object-cover object-center w-full rounded-md " />
                         </div>
                         <div className='mt-5 md:mt-10 lg-mt-14'>
-                            <div className='grid grid-cols-1 md:grid-cols-2 lg:md:grid-cols-4 gap-5 justify-between'>
+                            <div className='grid grid-cols-1 md:grid-cols-2 lg:md:grid-cols-3 gap-5 justify-between'>
                                 <div className="bg-slate-100 px-10 py-6 rounded-md mb-3">
                                     <TbAccessPoint className='w-10 h-10 text-orange-500' />
                                     <p>Live Class <br /> {tClass}</p>
