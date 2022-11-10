@@ -10,8 +10,7 @@ const Login = () => {
     const [error, setError] = useState()
     const [errorCode, setErrorCode] = useState()
     const { users, userLogin, googleLongIn , githubLongIn} = useContext(AuthContext)
-    console.log(users);
-    // const from = location.state
+    
 
     const location = useLocation()
 

@@ -1,15 +1,17 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { FaFacebookF, FaGofore, FaLinkedinIn } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 
 const Registration = () => {
-    const { createUserEmailPassword, userProfileUpdate } = useContext(AuthContext)
+    const googleProvider = new GoogleAuthProvider();
+    const { createUserEmailPassword, userProfileUpdate, googleLongIn } = useContext(AuthContext)
     const [error, setError] = useState('')
 
-    const handelUpdateProfile = (name) => {
+    const handelUpdateProfile = (name, photo_url) => {
         const profile = {
             displayName: name,
+            photoURL : photo_url
         }
         userProfileUpdate(profile)
             .then(() => {
@@ -17,17 +19,32 @@ const Registration = () => {
                 setError(error.code)
             });
     }
+
+
+    const handelGoogleLogIn = () => {
+        googleLongIn(googleProvider)
+            .then((result) => {
+                const user = result.user;
+                setError('')
+            }).catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setError(errorMessage)
+            });
+    }
+
     const handelUserRegistration = e => {
         e.preventDefault()
         const name = e.target.name.value
         const email = e.target.email.value
         const password = e.target.password.value
+        const photo_url = e.target.photo_url.value
 
         createUserEmailPassword(email, password)
             .then((currentUser) => {
                 // Signed in 
                 const users = currentUser.user;
-                handelUpdateProfile(name)
+                handelUpdateProfile(name, photo_url)
                 console.log(users)
             })
             .catch((error) => {
@@ -35,7 +52,6 @@ const Registration = () => {
                 setError(errorMessage)
             });
     }
-    console.log(error)
     return (
         <div className='max-w-[1440px] mx-auto mt-28'>
             <div className="min-h-screen md:flex md:justify-center">
@@ -54,6 +70,17 @@ const Registration = () => {
                                         <span className="label-text">Name</span>
                                     </label>
                                     <input type="text" name='name' placeholder="name" className="input input-bordered" />
+                                </div>
+                                <div className="form-control">
+                                <label className="label">
+                                        <span className="label-text">Photo</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name='photo_url'
+                                        placeholder="Photo URL"
+                                        className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                                    />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -79,7 +106,7 @@ const Registration = () => {
                                         <p className="text-base font-medium leading-4 px-2.5 text-gray-400">OR</p>
                                         <hr className="w-full bg-gray-400  " />
                                     </div>
-                                    <button className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full">
+                                    <button onClick={handelGoogleLogIn} className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full">
                                         <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M18.9892 10.1871C18.9892 9.36767 18.9246 8.76973 18.7847 8.14966H9.68848V11.848H15.0277C14.9201 12.767 14.3388 14.1512 13.047 15.0812L13.0289 15.205L15.905 17.4969L16.1042 17.5173C17.9342 15.7789 18.9892 13.221 18.9892 10.1871Z" fill="#4285F4" />
                                             <path d="M9.68813 19.9314C12.3039 19.9314 14.4999 19.0455 16.1039 17.5174L13.0467 15.0813C12.2286 15.6682 11.1306 16.0779 9.68813 16.0779C7.12612 16.0779 4.95165 14.3395 4.17651 11.9366L4.06289 11.9465L1.07231 14.3273L1.0332 14.4391C2.62638 17.6946 5.89889 19.9314 9.68813 19.9314Z" fill="#34A853" />

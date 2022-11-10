@@ -8,7 +8,6 @@ const Header = () => {
     const [toggle, setToggle] = useState(false)
     const { user, logOut } = useContext(AuthContext)
 
-
     const profileToggle = () => {
         setToggle(s => !s);
     }
@@ -17,9 +16,7 @@ const Header = () => {
         logOut()
             .then(result => {
                 const user = result.user
-                console.log(user.uid);
             }).catch((error) => {
-                console.log(error.code);
             });
     }
     return (
@@ -32,6 +29,8 @@ const Header = () => {
                 <ul className="menu menu-horizontal p-0">
                     <li><NavLink to="home">Home</NavLink></li>
                     <li><NavLink to="services">Services</NavLink></li>
+                    { user?.uid &&
+                    <li><NavLink to="my-review">My Review</NavLink></li>}
                     <li><NavLink to="about">About</NavLink></li>
                     <li><NavLink to="blog">Blog</NavLink></li>
                     <li><NavLink to="contact">Contact</NavLink></li>
@@ -42,7 +41,7 @@ const Header = () => {
                     <>
                         <div className="avatar " onClick={profileToggle}>
                             <div className="w-10 mt-3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src='https://avatars.githubusercontent.com/u/108586297?s=48&v=4' alt='user' />
+                                <img src={user?.photoURL} alt='user' />
                             </div>
                         </div>
                         <ul id='profile' className={`"absolute top-24 right-20 menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4" 
@@ -77,6 +76,8 @@ const Header = () => {
                     <ul tabIndex={0} className=" menu menu-compact rounded-md dropdown-content mt-3 p-2 shadow bg-base-100 w-52">
                         <li><NavLink to="home">Home</NavLink></li>
                         <li><NavLink to="services">Services</NavLink></li>
+                        { user?.uid &&
+                        <li><NavLink to="my-review">My Review</NavLink></li>}
                         <li><NavLink to="about">About</NavLink></li>
                         <li><NavLink to="blog">Blog</NavLink></li>
                         <li><NavLink to="contact">Contact</NavLink></li>
