@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaFreeCodeCamp } from 'react-icons/fa';
 import { TbAccessPoint, TbClock } from "react-icons/tb";
 // import ReactModal from 'react-modal';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 import AddReview from '../Review/AddReview';
 import DisplayReviews from '../Review/DisplayReviews';
 
@@ -10,6 +11,7 @@ import DisplayReviews from '../Review/DisplayReviews';
 
 
 const Details = () => {
+    const {user} = useContext(AuthContext)
     const detailsService = useLoaderData()
     const { _id, title, image, tClass, description } = detailsService
     
@@ -21,7 +23,7 @@ const Details = () => {
         fetch(`http://localhost:5000/reviews?service_ID=${_id}`)
         .then(res => res.json())
         .then(data => setReviews(data))
-    },[])
+    },[user?.email])
 
 
 

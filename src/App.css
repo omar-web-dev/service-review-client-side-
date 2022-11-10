@@ -14,13 +14,3 @@ body {
   line-height: 300px;
   text-align: center;
 }
-.swiper-pagination-bullet{
-  color: red;
-  background-color: red;
-} 
-.swiper-pagination-bullet-active{
-  color: aliceblue;
-}
-.swiper-pagination{
-  background:red;
-}

@@ -1,7 +1,6 @@
 import React from 'react';
-// import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { FaStarOfDavid } from 'react-icons/fa';
+import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 
 
@@ -17,9 +16,23 @@ const MyReviewsCard = ({ rw, reviews, setReviews }) => {
     console.log('no a data')
     }
 
-    const handelEdit = (id) => {
-        console.log('edit', id)
-    }
+    // const handelEdit = id => {
+    //     fetch(`http://localhost:5000/reviews/${id}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ review })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data)
+    //             if(data.modifiedCount > 0){
+    //             }
+    //         })
+    // }
+
+
     const notify = () => toast("successfully deleted!");
 
     const handelDelete = (id) => {
@@ -42,6 +55,11 @@ const MyReviewsCard = ({ rw, reviews, setReviews }) => {
     return (
         <div>
             <ToastContainer />
+
+
+
+
+            
             {rw._id ?
             <div className="container flex flex-col w-full my-5  max-w-lg p-6 mx-auto divide-y rounded-md bg-slate-50 shadow-lg">
                 <div>

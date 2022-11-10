@@ -52,9 +52,20 @@ const Login = () => {
     const handelGithubLogIn = () => {
         githubLongIn(githubProvider)
             .then((result) => {
-                const user = result.user;
+                const user = result.user.email;
                 console.log(user);
-                // ...
+                fetch('http://localhost:5000/jwt', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({user})
+            })
+                .then(res => res.json())
+                .then(data => {
+                    localStorage.setItem('token', data.token)
+                    // navigate(form, { replace: true })
+                })
             }).catch((error) => {
                 const errorMessage = error.message;
                 console.log(errorMessage);

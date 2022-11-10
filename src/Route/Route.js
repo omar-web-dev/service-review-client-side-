@@ -8,6 +8,8 @@ import Blog from "../pages/Blog";
 import AllServices from "../pages/Home/Services/AllService";
 import PrivetRoute from "./PrivetRoute";
 import MyReview from "../pages/Review/MyReview";
+import AddService from "../pages/Home/Services/AddService";
+import Contact from "../pages/Contact";
 
 
 export const router = createBrowserRouter([
@@ -36,14 +38,22 @@ export const router = createBrowserRouter([
                 element : <PrivetRoute><MyReview/></PrivetRoute>
             },
             {
+                path: 'add-service',
+                element : <PrivetRoute><AddService/></PrivetRoute>
+            },
+            {
                 path: 'service/:_id',
                 // http://localhost:3000/details/636b1fe0ba91a2efff9d7eb4
                 loader : ({params}) => fetch(`http://localhost:5000/service/${params._id}`),
-                element : <PrivetRoute><Details/></PrivetRoute>
+                element : <Details/>
             },
             {
                 path: 'login',
                 element : <Login/>
+            },
+            {
+                path: 'contact',
+                element : <Contact/>
             },
             {
                 path: 'registration',

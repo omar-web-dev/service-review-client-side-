@@ -29,9 +29,8 @@ const Header = () => {
                 <ul className="menu menu-horizontal p-0">
                     <li><NavLink to="home">Home</NavLink></li>
                     <li><NavLink to="services">Services</NavLink></li>
-                    { user?.uid &&
-                    <li><NavLink to="my-review">My Review</NavLink></li>}
-                    <li><NavLink to="about">About</NavLink></li>
+                    <li><NavLink to="my-review">My Review</NavLink></li>
+                    <li><NavLink to="add-service">Add Service</NavLink></li>
                     <li><NavLink to="blog">Blog</NavLink></li>
                     <li><NavLink to="contact">Contact</NavLink></li>
                     <li><NavLink to="registration">Resignation</NavLink></li>
@@ -76,9 +75,7 @@ const Header = () => {
                     <ul tabIndex={0} className=" menu menu-compact rounded-md dropdown-content mt-3 p-2 shadow bg-base-100 w-52">
                         <li><NavLink to="home">Home</NavLink></li>
                         <li><NavLink to="services">Services</NavLink></li>
-                        { user?.uid &&
-                        <li><NavLink to="my-review">My Review</NavLink></li>}
-                        <li><NavLink to="about">About</NavLink></li>
+                        <li><NavLink to="my-review">My Review</NavLink></li>
                         <li><NavLink to="blog">Blog</NavLink></li>
                         <li><NavLink to="contact">Contact</NavLink></li>
                         <li><NavLink to="registration">Resignation</NavLink></li>
