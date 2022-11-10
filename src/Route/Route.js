@@ -10,6 +10,7 @@ import PrivetRoute from "./PrivetRoute";
 import MyReview from "../pages/Review/MyReview";
 import AddService from "../pages/Home/Services/AddService";
 import Contact from "../pages/Contact";
+import ErrorPage from "../pages/ErorrPage";
 
 
 export const router = createBrowserRouter([
@@ -67,6 +68,7 @@ export const router = createBrowserRouter([
                 path: 'blog',
                 element : <Blog/>
             },
-        ]
+        ],
+        errorElement: <ErrorPage/>
     }
 ])

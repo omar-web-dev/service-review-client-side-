@@ -33,7 +33,8 @@ const Header = () => {
                     <li><NavLink to="add-service">Add Service</NavLink></li>
                     <li><NavLink to="blog">Blog</NavLink></li>
                     <li><NavLink to="contact">Contact</NavLink></li>
-                    <li><NavLink to="registration">Resignation</NavLink></li>
+                    {!user?.uid &&
+                    <li><NavLink to="registration">Resignation</NavLink></li>}
                 </ul>
                 {user?.uid ?
                     user?.uid &&
@@ -78,7 +79,8 @@ const Header = () => {
                         <li><NavLink to="my-review">My Review</NavLink></li>
                         <li><NavLink to="blog">Blog</NavLink></li>
                         <li><NavLink to="contact">Contact</NavLink></li>
-                        <li><NavLink to="registration">Resignation</NavLink></li>
+                    {!user?.uid &&
+                        <li><NavLink to="registration">Resignation</NavLink></li>}
                     </ul>
                 </div>
 
