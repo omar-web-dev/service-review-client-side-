@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className='grid grid-cols-2 gap-10 max-w-[1440px] mx-auto my-20'>
+        <div className='grid grid-cols-1 px-[8%] lg:grid-cols-2 gap-10 max-w-[1440px] mx-auto my-20'>
             <div className=" p-6 overflow-hidden rounded-lg shadow bg-gray-100">
                 <article>
                     <h2 className="text-xl font-bold">
